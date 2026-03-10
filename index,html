@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Global Mood Map</title>
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+display:flex;
+}
+
+#left{
+width:75%;
+padding:10px;
+}
+
+#right{
+width:25%;
+background:#f2f2f2;
+padding:10px;
+}
+
+#map{
+height:450px;
+width:100%;
+margin-top:10px;
+}
+
+#moodChart{
+width:100%;
+height:250px;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="left">
+
+<h2>🌍 Global Mood Map</h2>
+
+<input type="text" id="name" placeholder="Name optional">
+
+<select id="mood">
+
+<option value="Happy">😊 Happy</option>
+<option value="Sad">😢 Sad</option>
+<option value="Angry">😡 Angry</option>
+<option value="Excited">🤩 Excited</option>
+<option value="Love">❤️ Love</option>
+<option value="Stressed">😰 Stressed</option>
+<option value="Calm">😌 Calm</option>
+
+</select>
+
+<input type="text" id="reason" placeholder="Why do you feel this way">
+
+<button onclick="shareMood()">Share Mood</button>
+
+<div style="margin-top:10px">
+
+Happy: <span id="Happy">0</span> |
+Sad: <span id="Sad">0</span> |
+Angry: <span id="Angry">0</span> |
+Excited: <span id="Excited">0</span> |
+Love: <span id="Love">0</span> |
+Stressed: <span id="Stressed">0</span> |
+Calm: <span id="Calm">0</span>
+
+</div>
+
+<div id="map"></div>
+
+<h3>Mood Analytics (6 Months)</h3>
+
+<canvas id="moodChart"></canvas>
+
+</div>
+
+<div id="right">
+
+<h3>Top Cities</h3>
+
+<div id="cities"></div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
